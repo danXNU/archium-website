@@ -1530,6 +1530,7 @@
       .pricing-grid,
       .benefits-grid,
       .hiw-grid,
+      .roadmap-grid,
       .testimonial-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1540,6 +1541,9 @@
     }
 
     @media (max-width: 720px) {
+      /* Spaziatura più stretta su mobile */
+      .container { padding-left: 1rem; padding-right: 1rem; }
+
       .navbar {
         padding-inline: 0.4rem;
       }
@@ -1548,10 +1552,27 @@
         display: none;
       }
 
+      /* Mantieni layout orizzontale delle azioni su mobile */
+      .nav-right--stack { flex-direction: row; align-items: center; gap: 0.6rem; }
+
+      /* CTA come bottone normale (niente hover/QR) */
+      .nav-cta-wrap { width: auto; height: auto; padding: 0; margin: 0; }
+      .nav-cta-wrap::before, .nav-cta-wrap::after { display: none !important; }
+      .nav-cta {
+        position: static;
+        transform: none;
+        width: auto;
+        height: auto;
+        padding: 0.45rem 0.9rem;
+        border-radius: var(--radius-pill);
+      }
+      .nav-cta .nav-cta__label { opacity: 1; visibility: visible; position: static; transform: none; }
+      .nav-cta .nav-cta__qr { display: none !important; }
+
       .hero {
         padding-top: 2.4rem;
-        padding-left: 2.4rem;
-        padding-right: 2.4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
 
         .qr-logo {
@@ -1574,6 +1595,7 @@
       .pricing-grid,
       .benefits-grid,
       .hiw-grid,
+      .roadmap-grid,
       .testimonial-grid {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -1585,6 +1607,11 @@
     }
 
     @media (max-width: 520px) {
+      /* Riduci leggermente raggi e padding della hero per schermi molto piccoli */
+      .hero-media { border-radius: 22px; padding: 1rem; }
+      .hero-media-window { border-radius: 16px; }
+      .hero-ctas { flex-wrap: wrap; gap: 0.6rem; }
+
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
       }
