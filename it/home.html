@@ -617,7 +617,7 @@
       background: rgba(148,163,184,0.10);
       border: 1px dashed rgba(203,213,225,0.7);
       opacity: 0;
-      animation: cats-fade 8s ease-in-out infinite;
+      animation: cats-fade 5s ease-in-out infinite;
       z-index: 1;
     }
     .hero-media .docs-anim .lane.finance { left: 10%; }
@@ -652,7 +652,7 @@
       border-radius: 999px;
       box-shadow: 0 0 18px rgba(245,137,73,0.8), 0 0 36px rgba(245,137,73,0.35);
       opacity: 0;
-      animation: sweep-across 8s ease-in-out infinite;
+      animation: sweep-across 5s ease-in-out infinite;
       z-index: 3;
     }
 
@@ -668,7 +668,7 @@
       border: 1px solid #e5e7eb;
       border-radius: 999px;
       opacity: 0;
-      animation: cats-fade 8s ease-in-out infinite;
+      animation: cats-fade 5s ease-in-out infinite;
       z-index: 2;
     }
     .hero-media .docs-anim .cat-label.finance { left: 10%; }
@@ -693,7 +693,7 @@
       align-items: center;
       gap: 0.35rem;
       opacity: 0;
-      animation: search-appear 8s ease-in-out infinite;
+      animation: search-appear 5s ease-in-out infinite;
       z-index: 4;
     }
     .hero-media .docs-anim .search-bar svg {
@@ -707,7 +707,7 @@
       width: 0ch;
       --chars: 19;
       animation: typing 2s steps(19, end) 1 both;
-      animation-delay: 6s; /* types near end of the 8s loop */
+      animation-delay: 3.75s; /* types near end of the 5s loop */
     }
 
     .hero-media .doc {
@@ -725,7 +725,7 @@
       left: 50%;
       top: -120%;
       transform: translate(-50%, 0) rotate(var(--r));
-      animation: docs-flow 8s ease-in-out infinite;
+      animation: docs-flow 5s ease-in-out infinite;
       animation-fill-mode: both;
       will-change: transform, left, top;
       animation-delay: calc(var(--i, 0) * 60ms);
@@ -764,9 +764,9 @@
     @keyframes docs-flow {
       0%   { left: 50%; top: -120%; transform: translate(-50%, 0) rotate(var(--r)); }
       20%  { left: 50%; top: 50%; transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r)); }
-      55%  { left: 50%; top: 50%; transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r)); }
-      72%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
-      88%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
+      36%  { left: 50%; top: 50%; transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r)); }
+      50%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
+      64%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
       100% { left: 50%; top: -120%; transform: translate(-50%, 0) rotate(var(--r)); }
     }
 
@@ -822,7 +822,7 @@
     .hero-media .doc:nth-child(12) { --ty: var(--r3); --r: 18deg;  --i: 11; --mx: 50px;  --my: -16px; }
 
     /* Highlight the focused doc late in cycle */
-    .hero-media .doc.focus { animation: docs-flow 8s ease-in-out infinite, focus-pulse 8s ease-in-out infinite; }
+    .hero-media .doc.focus { animation: docs-flow 5s ease-in-out infinite, focus-pulse 5s ease-in-out infinite; }
 
     @media (max-width: 640px) {
       .hero-media .docs-anim { height: 220px; }
