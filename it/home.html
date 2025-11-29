@@ -294,6 +294,8 @@
       height: 100%;
       object-fit: contain;
     }
+    /* Hide inline overlay image; use ::after overlay for consistency */
+    .nav-cta .nav-cta__qrBox img.qr-logo { display: none !important; }
 
     /* Logo centrale sopra il QR */
     .nav-cta .nav-cta__qrBox::after {
@@ -302,8 +304,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 6px;
       background: #ffffff url('../logo.png') center/70% no-repeat;
       padding: 0;
@@ -343,7 +345,7 @@
       pointer-events: auto;
       transform: scale(1);
       /* lascia spazio in alto per l'etichetta */
-      inset: 36px 12px 12px 12px;
+      inset: 26px 12px 12px 12px;
       transition-delay: 0s;
     }
 
@@ -1445,7 +1447,7 @@
     background-color: white;  /* White padding */
     display: inline-block; /* Keep the QR code compact */
   }
-
+  
     .newsletter-input-wrap {
       display: flex;
       align-items: stretch;
@@ -1567,7 +1569,46 @@
         border-radius: var(--radius-pill);
       }
       .nav-cta .nav-cta__label { opacity: 1; visibility: visible; position: static; transform: none; }
-      .nav-cta .nav-cta__qr { display: none !important; }
+      /* Mantieni il QR montato; nascondi via opacity per transizioni fluide */
+      .nav-cta .nav-cta__qr {
+        display: grid;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: scale(0.96);
+        transition: opacity 160ms ease, transform 200ms ease, visibility 0s linear 160ms;
+        will-change: opacity, transform;
+        backface-visibility: hidden;
+      }
+
+      /* Open state on mobile: expand button and show QR inside */
+      .nav-cta.is-open {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        z-index: 60;
+      }
+      .nav-cta.is-open .nav-cta__label {
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        left: 8px; right: 8px; top: 8px;
+        text-align: center;
+        z-index: 2;
+      }
+      .nav-cta.is-open .nav-cta__qr {
+        opacity: 1; visibility: visible; pointer-events: auto; transform: scale(1);
+        position: absolute;
+        inset: 36px 12px 12px 12px;
+        transition-delay: 0s;
+      }
+      
+      .nav-cta .nav-cta__qrBox { max-width: 170px; max-height: 170px; }
+      /* Overlay logo size on mobile */
+      .nav-cta .nav-cta__qrBox::after { width: 32px; height: 32px; }
 
       .hero {
         padding-top: 2.4rem;
@@ -1576,16 +1617,16 @@
       }
 
         .qr-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 50px;
-      height: 50px;
-      transform: translate(-50%, -50%);
-      border-radius: 8px; /* Optional: round corners */
-      background-color: white; /* For contrast */
-      padding: 4px;
-    }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 32px !important;
+        height: 32px !important;
+        transform: translate(-50%, -50%);
+        border-radius: 8px; /* Optional: round corners */
+        background-color: white; /* For contrast */
+        padding: 2px;
+      }
 
       .partners-logos {
         grid-auto-flow: row;
@@ -1611,6 +1652,10 @@
       .hero-media { border-radius: 22px; padding: 1rem; }
       .hero-media-window { border-radius: 16px; }
       .hero-ctas { flex-wrap: wrap; gap: 0.6rem; }
+      .nav-cta.is-open .nav-cta__qr { width: auto; height: auto; }
+      .nav-cta .nav-cta__qrBox { max-width: 100px; max-height: 100px; }
+      /* Overlay logo size on very small devices */
+      .nav-cta .nav-cta__qrBox::after { width: 28px; height: 28px; background-size: 90%; }
 
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -1953,6 +1998,55 @@ Find anything instantly with fast built-in search and feel in control again.
                   if (!img) return;
                   var QR_BASE64 = ""; // optionally override with your data URL
                   if (QR_BASE64) img.src = QR_BASE64;
+                })();
+
+                // Mobile: open on tap, hide on scroll/orientation/outside click
+                (function () {
+                  var btn = document.getElementById('get-app-btn');
+                  if (!btn) return;
+                  var isMobile = function () { return window.matchMedia('(max-width: 720px)').matches; };
+                  var lastOpenTs = 0;
+
+                  // Open on tap
+                  btn.addEventListener('click', function (e) {
+                    if (!isMobile()) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (btn.classList.contains('is-open')) {
+                      btn.classList.remove('is-open');
+                      btn.blur();
+                      return;
+                    }
+                    btn.classList.add('is-open');
+                    lastOpenTs = Date.now();
+                  });
+
+                  // Hide helper
+                  var hideQR = function () {
+                    if (!isMobile()) return;
+                    // Avoid instantly closing due to scroll triggered by tap
+                    if (Date.now() - lastOpenTs < 250) return;
+                    btn.classList.remove('is-open');
+                    btn.blur();
+                  };
+
+                  // Hide on scroll/resize/orientation (robust on mobile)
+                  window.addEventListener('scroll', hideQR, { passive: true });
+                  document.addEventListener('scroll', hideQR, { passive: true });
+                  window.addEventListener('wheel', hideQR, { passive: true });
+                  window.addEventListener('resize', hideQR);
+                  window.addEventListener('orientationchange', hideQR);
+
+                  // Hide when tapping/clicking outside the expanded button
+                  var onDocInteract = function (evt) {
+                    if (!isMobile()) return;
+                    if (!btn.classList.contains('is-open')) return;
+                    var t = evt.target;
+                    if (btn.contains(t)) return; // ignore clicks inside the button/QR
+                    hideQR();
+                  };
+                  document.addEventListener('click', onDocInteract, true);
+                  document.addEventListener('touchstart', onDocInteract, { passive: true, capture: true });
                 })();
               </script>
 </body>
