@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Archium - Lo spazio di lavoro calmo per i tuoi documenti. Scansione documenti gratuita e illimitata, con Apple Intelligence</title>
+  <title>Archium - Lo spazio di lavoro calmo per i tuoi documenti. Scansione documenti gratuita e illimitata, con Apple
+    Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="description"
+  <meta name="description"
     content="Archium è uno spazio di lavoro calmo e privato per i documenti delle persone. Scansiona documenti illimitati gratis, organizzali con Apple Intelligence e mantieni i tuoi dati al sicuro con Private Cloud Compute. Supporto iCloud in arrivo." />
-   <meta name="keywords"
+  <meta name="keywords"
     content="Archium, app documenti personale, scansione documenti illimitata gratuita, organizzazione documenti con Apple Intelligence, Private Cloud Compute, archiviazione documenti sicura, documenti senza carta, app archiviazione digitale, app documenti iCloud" />
   <meta name="author" content="Archium Team" />
 
@@ -29,7 +30,8 @@
   <!-- Twitter Meta Tags -->
   <meta name="x:card" content="summary_large_image" />
   <meta name="x:title" content="Archium - Lo spazio di lavoro calmo per i tuoi documenti" />
-  <meta name="x:description" content="Tieni tutti i tuoi documenti in uno spazio ordinato. Pensato per chi si muove veloce." />
+  <meta name="x:description"
+    content="Tieni tutti i tuoi documenti in uno spazio ordinato. Pensato per chi si muove veloce." />
   <meta name="x:image" content="https://yourdomain.com/images/twitter-image.jpg" />
 
 
@@ -94,8 +96,8 @@
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 1.25rem;
-      padding-left:2.4rem;
-      padding-right:2.4rem;
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
     }
 
     /* NAVBAR */
@@ -229,7 +231,8 @@
       position: absolute;
       left: auto;
       right: 0;
-      top: 0; /* ancora in alto per espandersi verso il basso */
+      top: 0;
+      /* ancora in alto per espandersi verso il basso */
       z-index: 2;
       display: grid;
       place-items: center;
@@ -256,11 +259,34 @@
       height: var(--cta-h, 36px);
       isolation: isolate;
     }
+
     /* Large halo centered on button to keep :hover when moving into expanded area */
-    .nav-cta-wrap::before { content: ""; position: absolute; left: 50%; top: 50%; width: 200px; height: 200px; transform: translate(-50%, -50%); pointer-events: none; }
+    .nav-cta-wrap::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
     /* Extra area below as well */
-    .nav-cta-wrap::after { content: ""; position: absolute; left: -6px; right: -6px; top: 100%; height: 180px; pointer-events: none; }
-    .nav-cta-wrap:hover::before, .nav-cta-wrap:hover::after { pointer-events: auto; }
+    .nav-cta-wrap::after {
+      content: "";
+      position: absolute;
+      left: -6px;
+      right: -6px;
+      top: 100%;
+      height: 180px;
+      pointer-events: none;
+    }
+
+    .nav-cta-wrap:hover::before,
+    .nav-cta-wrap:hover::after {
+      pointer-events: auto;
+    }
 
     /* Hide any legacy QR banner markup if present */
     .nav-qr {
@@ -275,7 +301,8 @@
     .nav-cta .nav-cta__qr {
       position: absolute;
       inset: 12px;
-      display: grid; /* keep in flow for smoother transitions */
+      display: grid;
+      /* keep in flow for smoother transitions */
       place-items: center;
       opacity: 0;
       visibility: hidden;
@@ -296,7 +323,8 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
       border: 1px solid #e5e7eb;
       overflow: hidden;
-      position: relative; /* permetti overlay del logo */
+      position: relative;
+      /* permetti overlay del logo */
       transform: translateY(4px) scale(0.98);
       transition: transform 280ms var(--ease-pop), box-shadow 280ms var(--ease-pop);
     }
@@ -306,8 +334,11 @@
       height: 100%;
       object-fit: contain;
     }
+
     /* Hide inline overlay image; use ::after overlay for consistency */
-    .nav-cta .nav-cta__qrBox img.qr-logo { display: none !important; }
+    .nav-cta .nav-cta__qrBox img.qr-logo {
+      display: none !important;
+    }
 
     /* Logo centrale sopra il QR */
     .nav-cta .nav-cta__qrBox::after {
@@ -321,16 +352,20 @@
       border-radius: 6px;
       background: #ffffff url('../logo.png') center/70% no-repeat;
       padding: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       border: 1px solid #e5e7eb;
       z-index: 3;
       pointer-events: none;
     }
 
     /* Hover/Open state */
-    .nav-cta-wrap:hover, .nav-cta:hover { z-index: 50; }
+    .nav-cta-wrap:hover,
+    .nav-cta:hover {
+      z-index: 50;
+    }
 
-    .nav-cta-wrap:hover .nav-cta, .nav-cta:hover {
+    .nav-cta-wrap:hover .nav-cta,
+    .nav-cta:hover {
       filter: brightness(1.03);
       border-radius: 16px;
       width: var(--cta-w-open);
@@ -340,7 +375,8 @@
     }
 
     /* Mantieni l'etichetta visibile quando espanso; spostala in alto */
-    .nav-cta-wrap:hover .nav-cta .nav-cta__label, .nav-cta:hover .nav-cta__label {
+    .nav-cta-wrap:hover .nav-cta .nav-cta__label,
+    .nav-cta:hover .nav-cta__label {
       opacity: 1;
       transform: none;
       position: absolute;
@@ -351,7 +387,8 @@
       z-index: 2;
     }
 
-    .nav-cta-wrap:hover .nav-cta .nav-cta__qr, .nav-cta:hover .nav-cta__qr {
+    .nav-cta-wrap:hover .nav-cta .nav-cta__qr,
+    .nav-cta:hover .nav-cta__qr {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
@@ -369,7 +406,11 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .nav-cta, .nav-cta .nav-cta__qr, .nav-cta .nav-cta__qrBox, .nav-cta .nav-cta__label {
+
+      .nav-cta,
+      .nav-cta .nav-cta__qr,
+      .nav-cta .nav-cta__qrBox,
+      .nav-cta .nav-cta__label {
         transition: none !important;
       }
     }
@@ -621,7 +662,9 @@
 
     /* When replacing hero-media with animation, hide old inner chrome */
     .hero-media.replaced .hero-media-window,
-    .hero-media.replaced .hero-media-tag { display: none !important; }
+    .hero-media.replaced .hero-media-tag {
+      display: none !important;
+    }
 
     /* MAGIC SORTER SHELF – DOCUMENTS ORGANIZER ANIMATION */
     .hero-media .docs-anim {
@@ -641,16 +684,28 @@
       width: 18%;
       transform: translateX(-50%);
       border-radius: 12px;
-      background: rgba(148,163,184,0.10);
-      border: 1px dashed rgba(203,213,225,0.7);
+      background: rgba(148, 163, 184, 0.10);
+      border: 1px dashed rgba(203, 213, 225, 0.7);
       opacity: 0;
       animation: cats-fade 5s ease-in-out infinite;
       z-index: 1;
     }
-    .hero-media .docs-anim .lane.finance { left: 10%; }
-    .hero-media .docs-anim .lane.trips { left: 35%; }
-    .hero-media .docs-anim .lane.health { left: 60%; }
-    .hero-media .docs-anim .lane.expense { left: 85%; }
+
+    .hero-media .docs-anim .lane.finance {
+      left: 10%;
+    }
+
+    .hero-media .docs-anim .lane.trips {
+      left: 35%;
+    }
+
+    .hero-media .docs-anim .lane.health {
+      left: 60%;
+    }
+
+    .hero-media .docs-anim .lane.expense {
+      left: 85%;
+    }
 
     /* Shelf */
     .hero-media .docs-anim .shelf {
@@ -662,7 +717,7 @@
       background: linear-gradient(#f9fafb, #eef2f7);
       border: 1px solid #e5e7eb;
       border-radius: 8px;
-      box-shadow: 0 10px 14px rgba(0,0,0,0.05) inset, 0 6px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 14px rgba(0, 0, 0, 0.05) inset, 0 6px 16px rgba(0, 0, 0, 0.06);
       z-index: 1;
     }
 
@@ -673,11 +728,11 @@
       bottom: 18%;
       width: 10px;
       left: -12%;
-      background: radial-gradient(circle, rgba(245,137,73,0.55) 0 44%, rgba(245,137,73,0.0) 60%),
-        linear-gradient(180deg, rgba(245,137,73,0.9), rgba(245,137,73,0.35));
+      background: radial-gradient(circle, rgba(245, 137, 73, 0.55) 0 44%, rgba(245, 137, 73, 0.0) 60%),
+        linear-gradient(180deg, rgba(245, 137, 73, 0.9), rgba(245, 137, 73, 0.35));
       filter: blur(0.2px);
       border-radius: 999px;
-      box-shadow: 0 0 18px rgba(245,137,73,0.8), 0 0 36px rgba(245,137,73,0.35);
+      box-shadow: 0 0 18px rgba(245, 137, 73, 0.8), 0 0 36px rgba(245, 137, 73, 0.35);
       opacity: 0;
       animation: sweep-across 5s ease-in-out infinite;
       z-index: 3;
@@ -698,10 +753,22 @@
       animation: cats-fade 5s ease-in-out infinite;
       z-index: 2;
     }
-    .hero-media .docs-anim .cat-label.finance { left: 10%; }
-    .hero-media .docs-anim .cat-label.trips { left: 35%; }
-    .hero-media .docs-anim .cat-label.health { left: 60%; }
-    .hero-media .docs-anim .cat-label.expense { left: 85%; }
+
+    .hero-media .docs-anim .cat-label.finance {
+      left: 10%;
+    }
+
+    .hero-media .docs-anim .cat-label.trips {
+      left: 35%;
+    }
+
+    .hero-media .docs-anim .cat-label.health {
+      left: 60%;
+    }
+
+    .hero-media .docs-anim .cat-label.expense {
+      left: 85%;
+    }
 
     /* Search bar */
     .hero-media .docs-anim .search-bar {
@@ -715,7 +782,7 @@
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 999px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       display: flex;
       align-items: center;
       gap: 0.35rem;
@@ -723,9 +790,14 @@
       animation: search-appear 5s ease-in-out infinite;
       z-index: 4;
     }
+
     .hero-media .docs-anim .search-bar svg {
-      width: 12px; height: 12px; flex: none; color: rgba(100,116,139,0.9);
+      width: 12px;
+      height: 12px;
+      flex: none;
+      color: rgba(100, 116, 139, 0.9);
     }
+
     .hero-media .docs-anim .typing {
       font: 600 0.72rem ui-monospace, SFMono-Regular, Menlo, monospace;
       color: var(--text-main);
@@ -734,7 +806,8 @@
       width: 0ch;
       --chars: 19;
       animation: typing 2s steps(19, end) 1 both;
-      animation-delay: 3.75s; /* types near end of the 5s loop */
+      animation-delay: 3.75s;
+      /* types near end of the 5s loop */
     }
 
     .hero-media .doc {
@@ -746,7 +819,7 @@
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
       transform-origin: center center;
       /* Prevent initial flash in top-left; start aligned with first keyframe */
       left: 50%;
@@ -768,7 +841,7 @@
       width: 0;
       height: 0;
       border-left: 12px solid transparent;
-      border-bottom: 12px solid rgba(148,163,184,0.18);
+      border-bottom: 12px solid rgba(148, 163, 184, 0.18);
       border-top-left-radius: 2px;
     }
 
@@ -781,80 +854,289 @@
       top: 8px;
       height: 6px;
       border-radius: 6px;
-      background: rgba(148,163,184,0.28);
+      background: rgba(148, 163, 184, 0.28);
     }
-    .hero-media .doc.finance::before { background: rgba(244, 114, 182, 0.45); }
-    .hero-media .doc.trips::before { background: rgba(99, 102, 241, 0.45); }
-    .hero-media .doc.health::before { background: rgba(34, 197, 94, 0.45); }
-    .hero-media .doc.expense::before { background: rgba(234, 179, 8, 0.5); }
+
+    .hero-media .doc.finance::before {
+      background: rgba(244, 114, 182, 0.45);
+    }
+
+    .hero-media .doc.trips::before {
+      background: rgba(99, 102, 241, 0.45);
+    }
+
+    .hero-media .doc.health::before {
+      background: rgba(34, 197, 94, 0.45);
+    }
+
+    .hero-media .doc.expense::before {
+      background: rgba(234, 179, 8, 0.5);
+    }
 
     @keyframes docs-flow {
-      0%   { left: 50%; top: -120%; transform: translate(-50%, 0) rotate(var(--r)); }
-      20%  { left: 50%; top: 50%; transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r)); }
-      36%  { left: 50%; top: 50%; transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r)); }
-      50%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
-      64%  { left: var(--tx); top: var(--ty); transform: translate(-50%, -50%) rotate(0deg); }
-      100% { left: 50%; top: -120%; transform: translate(-50%, 0) rotate(var(--r)); }
+      0% {
+        left: 50%;
+        top: -120%;
+        transform: translate(-50%, 0) rotate(var(--r));
+      }
+
+      20% {
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r));
+      }
+
+      36% {
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px))) rotate(var(--r));
+      }
+
+      50% {
+        left: var(--tx);
+        top: var(--ty);
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      64% {
+        left: var(--tx);
+        top: var(--ty);
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      100% {
+        left: 50%;
+        top: -120%;
+        transform: translate(-50%, 0) rotate(var(--r));
+      }
     }
 
     @keyframes sweep-across {
-      0%, 25% { transform: translateX(0); opacity: 0; }
-      35% { opacity: 1; }
-      55% { transform: translateX(118%); opacity: 1; }
-      65%, 100% { opacity: 0; }
+
+      0%,
+      25% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      35% {
+        opacity: 1;
+      }
+
+      55% {
+        transform: translateX(118%);
+        opacity: 1;
+      }
+
+      65%,
+      100% {
+        opacity: 0;
+      }
     }
 
     @keyframes cats-fade {
-      0%, 55% { opacity: 0; }
-      60%, 90% { opacity: 1; }
-      100% { opacity: 0; }
+
+      0%,
+      55% {
+        opacity: 0;
+      }
+
+      60%,
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
     }
 
     @keyframes search-appear {
-      0%, 72% { opacity: 0; }
-      78%, 100% { opacity: 1; }
+
+      0%,
+      72% {
+        opacity: 0;
+      }
+
+      78%,
+      100% {
+        opacity: 1;
+      }
     }
 
     @keyframes typing {
-      0% { width: 0ch; }
-      100% { width: calc(var(--chars) * 1ch); }
+      0% {
+        width: 0ch;
+      }
+
+      100% {
+        width: calc(var(--chars) * 1ch);
+      }
     }
 
     @keyframes focus-pulse {
-      0%, 80% { box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-      86% { box-shadow: 0 0 0 2px rgba(99,102,241,0.25), 0 0 24px rgba(99,102,241,0.55); }
-      92% { box-shadow: 0 0 0 3px rgba(99,102,241,0.35), 0 0 32px rgba(99,102,241,0.65); }
-      100% { box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+      0%,
+      80% {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      86% {
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25), 0 0 24px rgba(99, 102, 241, 0.55);
+      }
+
+      92% {
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35), 0 0 32px rgba(99, 102, 241, 0.65);
+      }
+
+      100% {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
     }
 
     /* Final grid positions (percentages relative to container) */
-    .hero-media .docs-anim { --c1: 10%; --c2: 35%; --c3: 60%; --c4: 85%; --r1: 22%; --r2: 52%; --r3: 82%; }
+    .hero-media .docs-anim {
+      --c1: 10%;
+      --c2: 35%;
+      --c3: 60%;
+      --c4: 85%;
+      --r1: 22%;
+      --r2: 52%;
+      --r3: 82%;
+    }
+
     /* Columns by category */
-    .hero-media .doc.finance { --tx: var(--c1); }
-    .hero-media .doc.trips { --tx: var(--c2); }
-    .hero-media .doc.health { --tx: var(--c3); }
-    .hero-media .doc.expense { --tx: var(--c4); }
+    .hero-media .doc.finance {
+      --tx: var(--c1);
+    }
+
+    .hero-media .doc.trips {
+      --tx: var(--c2);
+    }
+
+    .hero-media .doc.health {
+      --tx: var(--c3);
+    }
+
+    .hero-media .doc.expense {
+      --tx: var(--c4);
+    }
+
     /* Rows + rotation + center-pile offsets per item */
-    .hero-media .doc:nth-child(1)  { --ty: var(--r1); --r: -18deg; --i: 0;  --mx: -44px; --my: 28px; }
-    .hero-media .doc:nth-child(2)  { --ty: var(--r1); --r: 22deg;  --i: 1;  --mx: 36px;  --my: 24px; }
-    .hero-media .doc:nth-child(3)  { --ty: var(--r1); --r: -12deg; --i: 2;  --mx: -30px; --my: 40px; }
-    .hero-media .doc:nth-child(4)  { --ty: var(--r1); --r: 28deg;  --i: 3;  --mx: 42px;  --my: 16px; }
-    .hero-media .doc:nth-child(5)  { --ty: var(--r2); --r: 16deg;  --i: 4;  --mx: -58px; --my: -18px; }
-    .hero-media .doc:nth-child(6)  { --ty: var(--r2); --r: -24deg; --i: 5;  --mx: 55px;  --my: -14px; }
-    .hero-media .doc:nth-child(7)  { --ty: var(--r2); --r: 14deg;  --i: 6;  --mx: -22px; --my: -30px; }
-    .hero-media .doc:nth-child(8)  { --ty: var(--r2); --r: -18deg; --i: 7;  --mx: 38px;  --my: -22px; }
-    .hero-media .doc:nth-child(9)  { --ty: var(--r3); --r: -10deg; --i: 8;  --mx: -34px; --my: 32px; }
-    .hero-media .doc:nth-child(10) { --ty: var(--r3); --r: 20deg;  --i: 9;  --mx: 28px;  --my: 26px; }
-    .hero-media .doc:nth-child(11) { --ty: var(--r3); --r: -26deg; --i: 10; --mx: -48px; --my: -12px; }
-    .hero-media .doc:nth-child(12) { --ty: var(--r3); --r: 18deg;  --i: 11; --mx: 50px;  --my: -16px; }
+    .hero-media .doc:nth-child(1) {
+      --ty: var(--r1);
+      --r: -18deg;
+      --i: 0;
+      --mx: -44px;
+      --my: 28px;
+    }
+
+    .hero-media .doc:nth-child(2) {
+      --ty: var(--r1);
+      --r: 22deg;
+      --i: 1;
+      --mx: 36px;
+      --my: 24px;
+    }
+
+    .hero-media .doc:nth-child(3) {
+      --ty: var(--r1);
+      --r: -12deg;
+      --i: 2;
+      --mx: -30px;
+      --my: 40px;
+    }
+
+    .hero-media .doc:nth-child(4) {
+      --ty: var(--r1);
+      --r: 28deg;
+      --i: 3;
+      --mx: 42px;
+      --my: 16px;
+    }
+
+    .hero-media .doc:nth-child(5) {
+      --ty: var(--r2);
+      --r: 16deg;
+      --i: 4;
+      --mx: -58px;
+      --my: -18px;
+    }
+
+    .hero-media .doc:nth-child(6) {
+      --ty: var(--r2);
+      --r: -24deg;
+      --i: 5;
+      --mx: 55px;
+      --my: -14px;
+    }
+
+    .hero-media .doc:nth-child(7) {
+      --ty: var(--r2);
+      --r: 14deg;
+      --i: 6;
+      --mx: -22px;
+      --my: -30px;
+    }
+
+    .hero-media .doc:nth-child(8) {
+      --ty: var(--r2);
+      --r: -18deg;
+      --i: 7;
+      --mx: 38px;
+      --my: -22px;
+    }
+
+    .hero-media .doc:nth-child(9) {
+      --ty: var(--r3);
+      --r: -10deg;
+      --i: 8;
+      --mx: -34px;
+      --my: 32px;
+    }
+
+    .hero-media .doc:nth-child(10) {
+      --ty: var(--r3);
+      --r: 20deg;
+      --i: 9;
+      --mx: 28px;
+      --my: 26px;
+    }
+
+    .hero-media .doc:nth-child(11) {
+      --ty: var(--r3);
+      --r: -26deg;
+      --i: 10;
+      --mx: -48px;
+      --my: -12px;
+    }
+
+    .hero-media .doc:nth-child(12) {
+      --ty: var(--r3);
+      --r: 18deg;
+      --i: 11;
+      --mx: 50px;
+      --my: -16px;
+    }
 
     /* Highlight the focused doc late in cycle */
-    .hero-media .doc.focus { animation: docs-flow 5s ease-in-out infinite, focus-pulse 5s ease-in-out infinite; }
+    .hero-media .doc.focus {
+      animation: docs-flow 5s ease-in-out infinite, focus-pulse 5s ease-in-out infinite;
+    }
 
     @media (max-width: 640px) {
-      .hero-media .docs-anim { height: 220px; }
-      .hero-media .doc { --size-w: 44px; --size-h: 56px; }
-      .hero-media .docs-anim .cat-label { font-size: 0.65rem; }
+      .hero-media .docs-anim {
+        height: 220px;
+      }
+
+      .hero-media .doc {
+        --size-w: 44px;
+        --size-h: 56px;
+      }
+
+      .hero-media .docs-anim .cat-label {
+        font-size: 0.65rem;
+      }
     }
 
     /* PARTNERS */
@@ -1079,7 +1361,7 @@
     .how-it-works {
       padding: 2.7rem 0 2.4rem;
       padding-left: 2.4rem;
-       padding-right: 2.4rem;
+      padding-right: 2.4rem;
     }
 
     .hiw-grid {
@@ -1467,12 +1749,14 @@
       gap: 0.4rem;
     }
 
-     #qrcode {
-    padding: 5px;
-    background-color: white;  /* White padding */
-    display: inline-block; /* Keep the QR code compact */
-  }
-  
+    #qrcode {
+      padding: 5px;
+      background-color: white;
+      /* White padding */
+      display: inline-block;
+      /* Keep the QR code compact */
+    }
+
     .newsletter-input-wrap {
       display: flex;
       align-items: stretch;
@@ -1568,8 +1852,12 @@
     }
 
     @media (max-width: 720px) {
+
       /* Spaziatura più stretta su mobile */
-      .container { padding-left: 1rem; padding-right: 1rem; }
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
 
       .navbar {
         padding-inline: 0.4rem;
@@ -1580,11 +1868,25 @@
       }
 
       /* Mantieni layout orizzontale delle azioni su mobile */
-      .nav-right--stack { flex-direction: row; align-items: center; gap: 0.6rem; }
+      .nav-right--stack {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
+      }
 
       /* CTA come bottone normale (niente hover/QR) */
-      .nav-cta-wrap { width: auto; height: auto; padding: 0; margin: 0; }
-      .nav-cta-wrap::before, .nav-cta-wrap::after { display: none !important; }
+      .nav-cta-wrap {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-cta-wrap::before,
+      .nav-cta-wrap::after {
+        display: none !important;
+      }
+
       .nav-cta {
         position: static;
         transform: none;
@@ -1595,7 +1897,14 @@
         place-items: center;
         border-radius: var(--radius-pill);
       }
-      .nav-cta .nav-cta__label { opacity: 1; visibility: visible; position: static; transform: none; }
+
+      .nav-cta .nav-cta__label {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        transform: none;
+      }
+
       /* Mantieni il QR montato; nascondi via opacity per transizioni fluide */
       .nav-cta .nav-cta__qr {
         display: grid;
@@ -1619,25 +1928,39 @@
         z-index: 60;
         box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
       }
+
       .nav-cta.is-open .nav-cta__label {
         opacity: 1;
         visibility: visible;
         position: absolute;
-        left: 8px; right: 8px; top: 8px;
+        left: 8px;
+        right: 8px;
+        top: 8px;
         text-align: center;
         z-index: 2;
       }
+
       .nav-cta.is-open .nav-cta__qr {
-        opacity: 1; visibility: visible; pointer-events: auto; transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: scale(1);
         position: absolute;
         inset: 36px 12px 12px 12px;
         transition-delay: 0s;
         transition-timing-function: var(--ease-pop);
       }
-      
-      .nav-cta .nav-cta__qrBox { max-width: 170px; max-height: 170px; }
+
+      .nav-cta .nav-cta__qrBox {
+        max-width: 170px;
+        max-height: 170px;
+      }
+
       /* Overlay logo size on mobile */
-      .nav-cta .nav-cta__qrBox::after { width: 32px; height: 32px; }
+      .nav-cta .nav-cta__qrBox::after {
+        width: 32px;
+        height: 32px;
+      }
 
       .hero {
         padding-top: 2.4rem;
@@ -1645,15 +1968,17 @@
         padding-right: 1rem;
       }
 
-        .qr-logo {
+      .qr-logo {
         position: absolute;
         top: 50%;
         left: 50%;
         width: 32px !important;
         height: 32px !important;
         transform: translate(-50%, -50%);
-        border-radius: 8px; /* Optional: round corners */
-        background-color: white; /* For contrast */
+        border-radius: 8px;
+        /* Optional: round corners */
+        background-color: white;
+        /* For contrast */
         padding: 2px;
       }
 
@@ -1677,14 +2002,38 @@
     }
 
     @media (max-width: 520px) {
+
       /* Riduci leggermente raggi e padding della hero per schermi molto piccoli */
-      .hero-media { border-radius: 22px; padding: 1rem; }
-      .hero-media-window { border-radius: 16px; }
-      .hero-ctas { flex-wrap: wrap; gap: 0.6rem; }
-      .nav-cta.is-open .nav-cta__qr { width: auto; height: auto; }
-      .nav-cta .nav-cta__qrBox { max-width: 100px; max-height: 100px; }
+      .hero-media {
+        border-radius: 22px;
+        padding: 1rem;
+      }
+
+      .hero-media-window {
+        border-radius: 16px;
+      }
+
+      .hero-ctas {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .nav-cta.is-open .nav-cta__qr {
+        width: auto;
+        height: auto;
+      }
+
+      .nav-cta .nav-cta__qrBox {
+        max-width: 100px;
+        max-height: 100px;
+      }
+
       /* Overlay logo size on very small devices */
-      .nav-cta .nav-cta__qrBox::after { width: 28px; height: 28px; background-size: 90%; }
+      .nav-cta .nav-cta__qrBox::after {
+        width: 28px;
+        height: 28px;
+        background-size: 90%;
+      }
 
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -1718,14 +2067,14 @@
               <span class="nav-cta__label">Scarica l'app</span>
               <div class="nav-cta__qr" aria-hidden="true">
                 <div class="nav-cta__qrBox">
-                <div id="qrcode"></div>
-                <img 
-                src="data:image/webp;base64,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"
-                alt="Logo" class="qr-logo" />
+                  <div id="qrcode"></div>
+                  <img
+                    src="data:image/webp;base64,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"
+                    alt="Logo" class="qr-logo" />
                 </div>
               </div>
             </button>
-        </div>
+          </div>
         </div>
       </header>
     </div>
@@ -1733,366 +2082,394 @@
     <main>
       <!-- HERO -->
       <section class="  container hero" id="top">
-                  <div class="hero-grid">
-                    <div>
-                      <h1 class="hero-title">
-                        <span>Lascia che Archium tenga tutto in ordine.</span>
-                      </h1>
-                      <p class="hero-subtitle">
-                       Archium rende la gestione dei documenti senza sforzo — così resti concentrato su ciò che conta.
-Importa, scansiona, cerca e condividi con pochi tocchi.
-I tuoi documenti restano organizzati e al sicuro sul tuo dispositivo, sempre a portata di mano.
-La categorizzazione intelligente con Apple Intelligence tiene tutto in ordine automaticamente — senza lavoro extra.
-Trova qualsiasi cosa all'istante con la ricerca integrata e ritrova il controllo.
-                      </p>
+        <div class="hero-grid">
+          <div>
+            <h1 class="hero-title">
+              <span>Lascia che Archium tenga tutto in ordine.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Archium rende la gestione dei documenti senza sforzo — così resti concentrato su ciò che conta.
+              Importa, scansiona, cerca e condividi con pochi tocchi.
+              I tuoi documenti restano organizzati e al sicuro sul tuo dispositivo, sempre a portata di mano.
+              La categorizzazione intelligente con Apple Intelligence tiene tutto in ordine automaticamente — senza
+              lavoro extra.
+              Trova qualsiasi cosa all'istante con la ricerca integrata e ritrova il controllo.
+            </p>
 
-                    </div>
+          </div>
 
-                    <!-- MAGIC SORTER SHELF – DOCUMENTS ORGANIZER ANIMATION -->
-                    <aside class="hero-media replaced" aria-label="Animazione organizzatore documenti">
-                      <div class="docs-anim" role="img" aria-label="Documenti caotici vengono ordinati automaticamente in categorie; una ricerca trova subito quello giusto">
-                        <!-- 12 documents: start messy, settle into categories (columns) -->
-                        <div class="doc finance"></div>
-                        <div class="doc trips"></div>
-                        <div class="doc health"></div>
-                        <div class="doc expense"></div>
-                        <div class="doc finance"></div>
-                        <div class="doc trips"></div>
-                        <div class="doc health"></div>
-                        <div class="doc expense"></div>
-                        <div class="doc finance"></div>
-                        <div class="doc expense focus"></div>
-                        <div class="doc health"></div>
-                        <div class="doc trips"></div>
+          <!-- MAGIC SORTER SHELF – DOCUMENTS ORGANIZER ANIMATION -->
+          <aside class="hero-media replaced" aria-label="Animazione organizzatore documenti">
+            <div class="docs-anim" role="img"
+              aria-label="Documenti caotici vengono ordinati automaticamente in categorie; una ricerca trova subito quello giusto">
+              <!-- 12 documents: start messy, settle into categories (columns) -->
+              <div class="doc finance"></div>
+              <div class="doc trips"></div>
+              <div class="doc health"></div>
+              <div class="doc expense"></div>
+              <div class="doc finance"></div>
+              <div class="doc trips"></div>
+              <div class="doc health"></div>
+              <div class="doc expense"></div>
+              <div class="doc finance"></div>
+              <div class="doc expense focus"></div>
+              <div class="doc health"></div>
+              <div class="doc trips"></div>
 
-                        <!-- Category lanes (background grouping) -->
-                        <div class="lane finance" aria-hidden="true"></div>
-                        <div class="lane trips" aria-hidden="true"></div>
-                        <div class="lane health" aria-hidden="true"></div>
-                        <div class="lane expense" aria-hidden="true"></div>
-
-               
-
-                        <!-- Smart sweep (Archium) -->
-                        <div class="sweep" aria-hidden="true"></div>
-
-                        <!-- Category labels -->
-                        <div class="cat-label finance" aria-hidden="true">Finanza</div>
-                        <div class="cat-label trips" aria-hidden="true">Viaggi</div>
-                        <div class="cat-label health" aria-hidden="true">Salute</div>
-                        <div class="cat-label expense" aria-hidden="true">Spese</div>
+              <!-- Category lanes (background grouping) -->
+              <div class="lane finance" aria-hidden="true"></div>
+              <div class="lane trips" aria-hidden="true"></div>
+              <div class="lane health" aria-hidden="true"></div>
+              <div class="lane expense" aria-hidden="true"></div>
 
 
-                      </div>
-                    </aside>
-                  </div>
-                  </section>
 
-                  <!-- HOW IT WORKS -->
-                  <section class="how-it-works container" id="how-it-works">
-                    <header class="section-header">
-                      <p class="section-kicker">Come funziona</p>
-                      <h2 class="section-title">Ottieni valore in tre semplici passaggi.</h2>
-                      <p class="section-description">
-                        Nessun onboarding complesso o interfaccia affollata—solo un organizzatore semplice che funziona.
-                      </p>
-                    </header>
+              <!-- Smart sweep (Archium) -->
+              <div class="sweep" aria-hidden="true"></div>
 
-                    <div class="hiw-grid">
-                      <article class="step-card">
-                        <div class="step-index">Passo 1</div>
-                        <h3 class="step-title">Scarica l'app</h3>
-                      </article>
-                      <article class="step-card">
-                        <div class="step-index">Passo 2</div>
-                        <h3 class="step-title">Aggiungi documenti</h3>
-                        <p>
-                        È un compito, non una sensazione.
-                        </p>
-                      </article>
-                      <article class="step-card">
-                        <div class="step-index">Passo 3</div>
-                        <h3 class="step-title">Condividi in modo sicuro</h3>
-                        <p>
-                          Condividi con famiglia o colleghi con un tocco.
-                        </p>
-                      </article>
-                    </div>
-                  </section>
-
-                  <!-- BENEFITS -->
-                  <section class="benefits container" id="benefits">
-                    <header class="section-header">
-                      <p class="section-kicker">Vantaggi</p>
-                      <h2 class="section-title">Spiega il valore, ma non lo racconta pienamente a livello emotivo.</h2>
-                      <p class="section-description">
-                     La maggior parte delle app aggiunge altro. Noi togliamo tutto ciò che non conta. Il risultato è Archium: semplice per design, potente nell'uso. Steve Jobs disse una volta: "Il semplice può essere più difficile del complesso." Aveva ragione. Ecco perché ci ossessioniamo per ogni dettaglio—così tu non devi pensarci mai.
-                      </p>
-                    </header>
-
-                    <div class="benefits-grid">
-                      <article class="benefit-card">
-                        <div class="benefit-icon">⏱</div>
-                        <h3 class="benefit-title">Il tuo tempo è prezioso. Smetti di sprecarlo tra i file.
-                        </h3>
-                      </article>
-
-                      <article class="benefit-card">
-                        <div class="benefit-icon">⚙️</div>
-                        <h3 class="benefit-title">Si organizza da solo — come per magia.</h3>
-                      </article>
-                  
+              <!-- Category labels -->
+              <div class="cat-label finance" aria-hidden="true">Finanza</div>
+              <div class="cat-label trips" aria-hidden="true">Viaggi</div>
+              <div class="cat-label health" aria-hidden="true">Salute</div>
+              <div class="cat-label expense" aria-hidden="true">Spese</div>
 
 
-                      <article class="benefit-card">
-                        <div class="benefit-icon">🧘‍♀️</div>
-                        <h3 class="benefit-title">Finalmente — lavora senza caos.</h3>
-                      </article>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-                      <article class="benefit-card">
-                      <div class="benefit-icon">⚡️</div>
-                      <h3 class="benefit-title">Trova qualsiasi cosa in un secondo. Torna a sentirti in controllo.</h3>
-                    </article>
-                    </div>
-                  </section>
+      <!-- HOW IT WORKS -->
+      <section class="how-it-works container" id="how-it-works">
+        <header class="section-header">
+          <p class="section-kicker">Come funziona</p>
+          <h2 class="section-title">Ottieni valore in tre semplici passaggi.</h2>
+          <p class="section-description">
+            Nessun onboarding complesso o interfaccia affollata—solo un organizzatore semplice che funziona.
+          </p>
+        </header>
 
+        <div class="hiw-grid">
+          <article class="step-card">
+            <div class="step-index">Passo 1</div>
+            <h3 class="step-title">Scarica l'app</h3>
+          </article>
+          <article class="step-card">
+            <div class="step-index">Passo 2</div>
+            <h3 class="step-title">Aggiungi documenti</h3>
+            <p>
+              È un compito, non una sensazione.
+            </p>
+          </article>
+          <article class="step-card">
+            <div class="step-index">Passo 3</div>
+            <h3 class="step-title">Condividi in modo sicuro</h3>
+            <p>
+              Condividi con famiglia o colleghi con un tocco.
+            </p>
+          </article>
+        </div>
+      </section>
 
-                  <!-- FAQ -->
-                  <section class="faq container" id="faq">
-                    <div class="faq-grid">
-                      <div>
-                        <header class="section-header">
-                          <p class="section-kicker">FAQ</p>
-                          <h2 class="section-title">
-                            Risposte alle domande più comuni prima di iniziare.
-                          </h2>
-                        </header>
-                        <div class="faq-meta">
-                          <p>
-                            Condividere risposte chiare elimina attriti nell'ultima fase decisionale.
-                            Vogliamo coprire i temi più importanti, soprattutto su
-                            sicurezza e onboarding.
-                          </p>
-                        </div>
-                      </div>
+      <!-- BENEFITS -->
+      <section class="benefits container" id="benefits">
+        <header class="section-header">
+          <p class="section-kicker">Vantaggi</p>
+          <h2 class="section-title">Spiega il valore, ma non lo racconta pienamente a livello emotivo.</h2>
+          <p class="section-description">
+            La maggior parte delle app aggiunge altro. Noi togliamo tutto ciò che non conta. Il risultato è Archium:
+            semplice per design, potente nell'uso. Steve Jobs disse una volta: "Il semplice può essere più difficile del
+            complesso." Aveva ragione. Ecco perché ci ossessioniamo per ogni dettaglio—così tu non devi pensarci mai.
+          </p>
+        </header>
 
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon">⏱</div>
+            <h3 class="benefit-title">Il tuo tempo è prezioso. Smetti di sprecarlo tra i file.
+            </h3>
+          </article>
 
-                      <div class="faq-list">
-                        <details open>
-                          <summary>
-                            <span>Raccogliete dati personali?</span>
-                            <span class="faq-arrow">›</span>
-                          </summary>
-                          <p>
-                            Il nostro obiettivo è mantenere le cose semplici. Per questo non raccogliamo alcun dato e non lo faremo in futuro.
-                          </p>
-                        </details>
-
-
-                        <details>
-                          <summary>
-                            <span>Come organizzate i documenti?</span>
-                            <span class="faq-arrow">›</span>
-                          </summary>
-                          <p>
-                            Archium usa Apple Intelligence per categorizzare automaticamente i tuoi documenti e organizzarli in cartelle intelligenti, mantenendo tutto ordinato e facile da trovare. Tutta l'elaborazione avviene in locale sul tuo dispositivo, garantendo la massima privacy e il pieno controllo dei tuoi dati.
-                          </p>
-                        </details>
-
-                        <details>
-                          <summary>
-                            <span>Verrà aggiunto il supporto iCloud?</span>
-                            <span class="faq-arrow">›</span>
-                          </summary>
-                          <p>
-                            Sì, l'integrazione iCloud è nella nostra roadmap. Stiamo lavorando per rendere semplice per gli utenti sincronizzare
-                            documenti
-                            tra dispositivi Apple. Restate sintonizzati per gli aggiornamenti!
-                          </p>
-                        </details>
-
-                      </div>
-
-                    </div>
-                  </section>
+          <article class="benefit-card">
+            <div class="benefit-icon">⚙️</div>
+            <h3 class="benefit-title">Si organizza da solo — come per magia.</h3>
+          </article>
 
 
-                  <!-- ROADMAP -->
-                  <section class="roadmap container" id="roadmap">
-                    <header class="section-header">
-                      <p class="section-kicker">Roadmap</p>
-                      <h2 class="section-title">Cosa stiamo costruendo ora</h2>
-                      <p class="section-description">Traguardi recenti e in arrivo.</p>
-                    </header>
 
-                  <div class="roadmap-grid">
-                      <article class="roadmap-card">
-                        <div class="roadmap-status done">Completato</div>
-                        <h3 class="roadmap-title">Lancio + archiviazione sul dispositivo</h3>
-                        <p>App lanciata con archiviazione locale veloce e sicura.</p>
-                      </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">🧘‍♀️</div>
+            <h3 class="benefit-title">Finalmente — lavora senza caos.</h3>
+          </article>
 
-                         <article class="roadmap-card">
-                        <div class="roadmap-status in-progress">Completato</div>
-                        <h3 class="roadmap-title">Supporto App Intents</h3>
-                        <p>Controlla Archium con intent di sistema per caricare documenti, cercare documenti, gestire raccolte intelligenti e svolgere azioni comuni.</p>
-                      </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">⚡️</div>
+            <h3 class="benefit-title">Trova qualsiasi cosa in un secondo. Torna a sentirti in controllo.</h3>
+          </article>
+        </div>
+      </section>
 
 
-                      <article class="roadmap-card">
-                        <div class="roadmap-status done">Completato</div>
-                        <h3 class="roadmap-title">Integrazione Apple Intelligence</h3>
-                        <p>Archium categorizza e organizza in modo intelligente i tuoi contenuti in raccolte personalizzate, usando Apple Intelligence.</p>
-                      </article>
-                    
-                        <article class="roadmap-card">
-                        <div class="roadmap-status in-progress">In rilascio</div>
-                        <h3 class="roadmap-title">Cerca documenti</h3>
-                        <p>Cerca rapidamente tra i tuoi documenti e vai dritto a ciò che conta.</p>
-                      </article>
-                       <article class="roadmap-card">
-                        <div class="roadmap-status in-progress">In rilascio</div>
-                        <h3 class="roadmap-title">Cerca documenti</h3>
-                        <p>Cerca rapidamente tra i tuoi documenti e vai dritto a ciò che conta.</p>
-                      </article>
-                     
-
-                      <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
-                        <div class="roadmap-status upcoming">In arrivo</div>
-                        <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
-                        <div class="skeleton-line lg" style="width: 72%"></div>
-                        <div class="skeleton-line" style="width: 88%"></div>
-                        <div class="skeleton-line sm" style="width: 56%"></div>
-                      </article>
-
-                      <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
-                        <div class="roadmap-status upcoming">In arrivo</div>
-                        <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
-                        <div class="skeleton-line lg" style="width: 64%"></div>
-                        <div class="skeleton-line" style="width: 82%"></div>
-                        <div class="skeleton-line sm" style="width: 50%"></div>
-                      </article>
-                       <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
-                        <div class="roadmap-status upcoming">In arrivo</div>
-                        <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
-                        <div class="skeleton-line lg" style="width: 64%"></div>
-                        <div class="skeleton-line" style="width: 82%"></div>
-                        <div class="skeleton-line sm" style="width: 50%"></div>
-                      </article>
-                    </div>
-                </div>
-                </section>
+      <!-- FAQ -->
+      <section class="faq container" id="faq">
+        <div class="faq-grid">
+          <div>
+            <header class="section-header">
+              <p class="section-kicker">FAQ</p>
+              <h2 class="section-title">
+                Risposte alle domande più comuni prima di iniziare.
+              </h2>
+            </header>
+            <div class="faq-meta">
+              <p>
+                Condividere risposte chiare elimina attriti nell'ultima fase decisionale.
+                Vogliamo coprire i temi più importanti, soprattutto su
+                sicurezza e onboarding.
+              </p>
+            </div>
+          </div>
 
 
-                <!-- FOOTER -->
-                <footer class="footer container" >
-                  <div class="footer-grid">
-                    <div class="footer-logo">
-                      <div class="nav-left">
-                        <div class="logo-mark" aria-hidden="true"> <img
-                            src="data:image/webp;base64,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"
-                            alt="Logo" /></div>
-                        <div class="logo-text">Archium</div>
-                      </div>
-                      <p>
-                        Una casa tranquilla per ogni documento—pensata per chi si muove veloce.
-                      </p>
-                    </div>
+          <div class="faq-list">
+            <details open>
+              <summary>
+                <span>Raccogliete dati personali?</span>
+                <span class="faq-arrow">›</span>
+              </summary>
+              <p>
+                Il nostro obiettivo è mantenere le cose semplici. Per questo non raccogliamo alcun dato e non lo faremo
+                in futuro.
+              </p>
+            </details>
 
-                    <div>
-                      <div class="footer-nav-title">Prodotto</div>
-                      <div class="footer-nav">
-                        <a href="#how-it-works">Come funziona</a>
-                         <a href="#benefits">Vantaggi</a>
-                        <a href="#roadMap">Roadmap</a>
-                        <a href="#faq">FAQ</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="footer-bottom">
-                    <div>© <span id="year"></span>  Daniel & Haseeb. Tutti i diritti riservati.</div>
+            <details open>
+              <summary>
+                <span>Scansione documenti gratuita su Archium</span>
+                <span class="faq-arrow">›</span>
+              </summary>
+              <p>
+                Con l’app Archium puoi scansionare tutti i tuoi documenti gratuitamente.
+              </p>
+            </details>
 
-                  </div>
-                </footer>
-              </div>
 
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-              <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+            <details>
+              <summary>
+                <span>Come organizzate i documenti?</span>
+                <span class="faq-arrow">›</span>
+              </summary>
+              <p>
+                Archium usa Apple Intelligence per categorizzare automaticamente i tuoi documenti e organizzarli in
+                cartelle intelligenti, mantenendo tutto ordinato e facile da trovare. Tutta l'elaborazione avviene in
+                locale sul tuo dispositivo, garantendo la massima privacy e il pieno controllo dei tuoi dati.
+              </p>
+            </details>
 
-              <script>
-                 var qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: "https://apps.apple.com/it/app/archium-document-organizer/id6447586990",
-                width: 200,
-                height: 200,
-                padding: 5,
-                colorDark: "#000000",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-              });
+            <details>
+              <summary>
+                <span>Verrà aggiunto il supporto iCloud?</span>
+                <span class="faq-arrow">›</span>
+              </summary>
+              <p>
+                Sì, l'integrazione iCloud è nella nostra roadmap. Stiamo lavorando per rendere semplice per gli utenti
+                sincronizzare
+                documenti
+                tra dispositivi Apple. Restate sintonizzati per gli aggiornamenti!
+              </p>
+            </details>
 
-              
-              
-                // Simple current year helper
-                document.getElementById("year").textContent = new Date().getFullYear();
+          </div>
 
-                // Optionally ensure QR image is set if needed
-                (function () {
-                  var img = document.getElementById("qrImageBtn");
-                  if (!img) return;
-                  var QR_BASE64 = ""; // optionally override with your data URL
-                  if (QR_BASE64) img.src = QR_BASE64;
-                })();
+        </div>
+      </section>
 
-                // Mobile: open on tap, hide on scroll/orientation/outside click
-                (function () {
-                  var btn = document.getElementById('get-app-btn');
-                  if (!btn) return;
-                  var isMobile = function () { return window.matchMedia('(max-width: 720px)').matches; };
-                  var lastOpenTs = 0;
 
-                  // Open on tap
-                  btn.addEventListener('click', function (e) {
-                    if (!isMobile()) return;
-                    e.preventDefault();
-                    e.stopPropagation();
-                    if (btn.classList.contains('is-open')) {
-                      btn.classList.remove('is-open');
-                      btn.blur();
-                      return;
-                    }
-                    btn.classList.add('is-open');
-                    lastOpenTs = Date.now();
-                  });
+      <!-- ROADMAP -->
+      <section class="roadmap container" id="roadmap">
+        <header class="section-header">
+          <p class="section-kicker">Roadmap</p>
+          <h2 class="section-title">Cosa stiamo costruendo ora</h2>
+          <p class="section-description">Traguardi recenti e in arrivo.</p>
+        </header>
 
-                  // Hide helper
-                  var hideQR = function () {
-                    if (!isMobile()) return;
-                    // Avoid instantly closing due to scroll triggered by tap
-                    if (Date.now() - lastOpenTs < 250) return;
-                    btn.classList.remove('is-open');
-                    btn.blur();
-                  };
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <div class="roadmap-status done">Completato</div>
+            <h3 class="roadmap-title">Lancio + archiviazione sul dispositivo</h3>
+            <p>App lanciata con archiviazione locale veloce e sicura.</p>
+          </article>
 
-                  // Hide on scroll/resize/orientation (robust on mobile)
-                  window.addEventListener('scroll', hideQR, { passive: true });
-                  document.addEventListener('scroll', hideQR, { passive: true });
-                  window.addEventListener('wheel', hideQR, { passive: true });
-                  window.addEventListener('resize', hideQR);
-                  window.addEventListener('orientationchange', hideQR);
+          <article class="roadmap-card">
+            <div class="roadmap-status done">Completed</div>
+            <h3 class="roadmap-title">Scansione intelligente</h3>
+            <p>Scansiona i tuoi documenti. Archium fa il resto.</p>
+          </article>
 
-                  // Hide when tapping/clicking outside the expanded button
-                  var onDocInteract = function (evt) {
-                    if (!isMobile()) return;
-                    if (!btn.classList.contains('is-open')) return;
-                    var t = evt.target;
-                    if (btn.contains(t)) return; // ignore clicks inside the button/QR
-                    hideQR();
-                  };
-                  document.addEventListener('click', onDocInteract, true);
-                  document.addEventListener('touchstart', onDocInteract, { passive: true, capture: true });
-                })();
-              </script>
+          <article class="roadmap-card">
+            <div class="roadmap-status in-progress">Completato</div>
+            <h3 class="roadmap-title">App Shortcuts</h3>
+            <p>Controlla Archium con intent di sistema per caricare documenti, cercare documenti, gestire raccolte
+              intelligenti e svolgere azioni comuni.</p>
+          </article>
+
+
+          <article class="roadmap-card">
+            <div class="roadmap-status done">Completato</div>
+            <h3 class="roadmap-title">Integrazione Apple Intelligence</h3>
+            <p>Archium categorizza e organizza in modo intelligente i tuoi contenuti in raccolte personalizzate, usando
+              Apple Intelligence.</p>
+          </article>
+
+          <article class="roadmap-card">
+            <div class="roadmap-status in-progress">In rilascio</div>
+            <h3 class="roadmap-title">Cerca documenti</h3>
+            <p>Cerca rapidamente tra i tuoi documenti e vai dritto a ciò che conta.</p>
+          </article>
+
+          <article class="roadmap-card">
+            <div class="roadmap-status in-progress">In corso</div>
+            <h3 class="roadmap-title">Supporto iCloud</h3>
+            <p>Sincronizza i documenti tra i dispositivi Apple in modo fluido</p>
+          </article>
+
+
+          <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
+            <div class="roadmap-status upcoming">In arrivo</div>
+            <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
+            <div class="skeleton-line lg" style="width: 72%"></div>
+            <div class="skeleton-line" style="width: 88%"></div>
+            <div class="skeleton-line sm" style="width: 56%"></div>
+          </article>
+
+          <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
+            <div class="roadmap-status upcoming">In arrivo</div>
+            <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
+            <div class="skeleton-line lg" style="width: 64%"></div>
+            <div class="skeleton-line" style="width: 82%"></div>
+            <div class="skeleton-line sm" style="width: 50%"></div>
+          </article>
+          <article class="roadmap-card skeleton" aria-label="Segnaposto funzionalità in arrivo">
+            <div class="roadmap-status upcoming">In arrivo</div>
+            <h3 class="roadmap-title visually-hidden">Funzionalità in arrivo</h3>
+            <div class="skeleton-line lg" style="width: 64%"></div>
+            <div class="skeleton-line" style="width: 82%"></div>
+            <div class="skeleton-line sm" style="width: 50%"></div>
+          </article>
+        </div>
+  </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <div class="nav-left">
+          <div class="logo-mark" aria-hidden="true"> <img
+              src="data:image/webp;base64,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"
+              alt="Logo" /></div>
+          <div class="logo-text">Archium</div>
+        </div>
+        <p>
+          Una casa tranquilla per ogni documento—pensata per chi si muove veloce.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-nav-title">Prodotto</div>
+        <div class="footer-nav">
+          <a href="#how-it-works">Come funziona</a>
+          <a href="#benefits">Vantaggi</a>
+          <a href="#roadMap">Roadmap</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Daniel & Haseeb. Tutti i diritti riservati.</div>
+
+    </div>
+  </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+
+  <script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "https://apps.apple.com/it/app/archium-document-organizer/id6447586990",
+      width: 200,
+      height: 200,
+      padding: 5,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+
+
+    // Simple current year helper
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Optionally ensure QR image is set if needed
+    (function () {
+      var img = document.getElementById("qrImageBtn");
+      if (!img) return;
+      var QR_BASE64 = ""; // optionally override with your data URL
+      if (QR_BASE64) img.src = QR_BASE64;
+    })();
+
+    // Mobile: open on tap, hide on scroll/orientation/outside click
+    (function () {
+      var btn = document.getElementById('get-app-btn');
+      if (!btn) return;
+      var isMobile = function () { return window.matchMedia('(max-width: 720px)').matches; };
+      var lastOpenTs = 0;
+
+      // Open on tap
+      btn.addEventListener('click', function (e) {
+        if (!isMobile()) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (btn.classList.contains('is-open')) {
+          btn.classList.remove('is-open');
+          btn.blur();
+          return;
+        }
+        btn.classList.add('is-open');
+        lastOpenTs = Date.now();
+      });
+
+      // Hide helper
+      var hideQR = function () {
+        if (!isMobile()) return;
+        // Avoid instantly closing due to scroll triggered by tap
+        if (Date.now() - lastOpenTs < 250) return;
+        btn.classList.remove('is-open');
+        btn.blur();
+      };
+
+      // Hide on scroll/resize/orientation (robust on mobile)
+      window.addEventListener('scroll', hideQR, { passive: true });
+      document.addEventListener('scroll', hideQR, { passive: true });
+      window.addEventListener('wheel', hideQR, { passive: true });
+      window.addEventListener('resize', hideQR);
+      window.addEventListener('orientationchange', hideQR);
+
+      // Hide when tapping/clicking outside the expanded button
+      var onDocInteract = function (evt) {
+        if (!isMobile()) return;
+        if (!btn.classList.contains('is-open')) return;
+        var t = evt.target;
+        if (btn.contains(t)) return; // ignore clicks inside the button/QR
+        hideQR();
+      };
+      document.addEventListener('click', onDocInteract, true);
+      document.addEventListener('touchstart', onDocInteract, { passive: true, capture: true });
+    })();
+  </script>
 </body>
 
 </html>
