@@ -1645,8 +1645,8 @@
         border-radius: var(--radius-pill) !important; transform: none !important;
       }
       .nav-cta .nav-cta__qrBox { max-width: 170px; max-height: 170px; }
-      /* Larger overlay logo on mobile */
-      .nav-cta .nav-cta__qrBox::after { width: 28px; height: 28px; background-size: 85%; }
+      /* Overlay logo size on mobile */
+      .nav-cta .nav-cta__qrBox::after { width: 32px; height: 32px; }
 
       .hero {
         padding-top: 2.4rem;
@@ -1654,18 +1654,19 @@
         padding-right: 1rem;
       }
 
-        .qr-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 22px;
-      height: 22px;
-      transform: translate(-50%, -50%);
-      border-radius: 8px; /* Optional: round corners */
-      background-color: white; /* For contrast */
-      padding: 2px;
-      pointer-events: none;
-    }
+      .qr-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 32px !important;
+        height: 32px !important;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        /* Optional: round corners */
+        background-color: white;
+        /* For contrast */
+        padding: 2px;
+      }
 
       .partners-logos {
         grid-auto-flow: row;
@@ -1692,9 +1693,9 @@
       .hero-media-window { border-radius: 16px; }
       .hero-ctas { flex-wrap: wrap; gap: 0.6rem; }
       .nav-cta.is-open .nav-cta__qr { width: auto; height: auto; }
-      .nav-cta .nav-cta__qrBox { max-width: 140px; max-height: 140px; }
-      /* Adjust overlay logo on very small devices */
-      .nav-cta .nav-cta__qrBox::after { width: 24px; height: 24px; background-size: 90%; }
+      .nav-cta .nav-cta__qrBox { max-width: 100px; max-height: 100px; }
+      /* Overlay logo size on very small devices */
+      .nav-cta .nav-cta__qrBox::after { width: 28px; height: 28px; background-size: 90%; }
 
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -2079,9 +2080,9 @@ Find anything instantly with fast built-in search and feel in control again.
                   if (!btn) return;
                   var isMobile = function () { return window.matchMedia('(max-width: 720px)').matches; };
                   var lastOpenTs = 0;
+                  var lastTouchTs = 0;
 
-                  // Open on tap
-                  btn.addEventListener('click', function (e) {
+                  var toggleOpen = function (e) {
                     if (!isMobile()) return;
                     e.preventDefault();
                     e.stopPropagation();
@@ -2092,7 +2093,17 @@ Find anything instantly with fast built-in search and feel in control again.
                     }
                     btn.classList.add('is-open');
                     lastOpenTs = Date.now();
+                  };
+
+                  // Open on tap/click (avoid duplicate click after touch)
+                  btn.addEventListener('click', function (e) {
+                    if (Date.now() - lastTouchTs < 500) return;
+                    toggleOpen(e);
                   });
+                  btn.addEventListener('touchstart', function (e) {
+                    lastTouchTs = Date.now();
+                    toggleOpen(e);
+                  }, { passive: false });
 
                   // Hide helper
                   var hideQR = function () {

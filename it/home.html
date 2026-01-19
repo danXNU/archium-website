@@ -2426,9 +2426,9 @@
       if (!btn) return;
       var isMobile = function () { return window.matchMedia('(max-width: 720px)').matches; };
       var lastOpenTs = 0;
+      var lastTouchTs = 0;
 
-      // Open on tap
-      btn.addEventListener('click', function (e) {
+      var toggleOpen = function (e) {
         if (!isMobile()) return;
         e.preventDefault();
         e.stopPropagation();
@@ -2439,7 +2439,17 @@
         }
         btn.classList.add('is-open');
         lastOpenTs = Date.now();
+      };
+
+      // Open on tap/click (avoid duplicate click after touch)
+      btn.addEventListener('click', function (e) {
+        if (Date.now() - lastTouchTs < 500) return;
+        toggleOpen(e);
       });
+      btn.addEventListener('touchstart', function (e) {
+        lastTouchTs = Date.now();
+        toggleOpen(e);
+      }, { passive: false });
 
       // Hide helper
       var hideQR = function () {
