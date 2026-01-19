@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.archiumapp.com/sitemap.xml
+Sitemap: https://archiumapp.com/sitemap.xml
+Sitemap: https://archium.app/sitemap.xml
